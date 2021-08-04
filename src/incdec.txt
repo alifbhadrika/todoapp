@@ -1,0 +1,21 @@
+const [num, setNum] = useState(0);
+const [diff, setDiff] = useState(1);
+
+const increment = () => {
+  setNum(num + Number(diff));
+};
+const decrement = () => {
+  setNum(num - Number(diff));
+};
+const diffhandler = (e) => {
+  setDiff(e.target.value);
+};
+return (
+  <div className="App">
+    <h1>{num}</h1>
+    <input type="text" onChange={diffhandler} value={diff}></input>
+    <button onClick={increment}>Increment</button>
+    <button onClick={decrement}>Decrement</button>
+    <button onClick={() => setNum(0)}>Reset</button>
+  </div>
+);
